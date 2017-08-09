@@ -80,7 +80,10 @@ void CDCDCDiagUpdaterTask::run( diagnostic_updater::DiagnosticStatusWrapper &sta
         stat.add( "Connected", mConnected );
         stat.add( "Input (V)", inV );
         stat.add( "Output (V)", outV );
+        
+    
         // <<<<< Diagnostics status
+        
 
         stat.summary(diagnostic_msgs::DiagnosticStatus::OK, "Power System CONNECTED");
 
@@ -96,6 +99,7 @@ void CDCDCDiagUpdaterTask::run( diagnostic_updater::DiagnosticStatusWrapper &sta
         {
             stat.mergeSummaryf(diagnostic_msgs::DiagnosticStatus::OK, "Input power OK: %5.2fV", inV);
         }
+        
 
         if( outV > (mLevels.output+mLevels.outputToll) )
         {

@@ -97,6 +97,7 @@ add_executable(
     ${MSG}
     ${LAUNCH}
 )
+add_dependencies(dcdc_usb_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 target_link_libraries(
     dcdc_usb_node
